@@ -14,7 +14,7 @@ const url = "https://curd-mern-r6jv.onrender.com"
   const [data, setData] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
   const [editId, setEditId] = useState(null);
-const url = "https://curd-mern-r6jv.onrender.com"
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
