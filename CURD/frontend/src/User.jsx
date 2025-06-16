@@ -12,7 +12,7 @@ const User = () => {
   const [data, setData] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
   const [editId, setEditId] = useState(null);
-
+const url = "https://curd-mern-r6jv.onrender.com"
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -22,12 +22,12 @@ const User = () => {
 
     try {
       if (isEdit) {
-        await axios.put(`http://localhost:5000/user/update/${editId}`, formData);
+        await axios.put(`https://curd-mern-r6jv.onrender.com/user/update/${editId}`, formData);
         alert("User Updated Successfully");
         setIsEdit(false);
         setEditId(null);
       } else {
-        await axios.post("http://localhost:5000/user/add", formData);
+        await axios.post("https://curd-mern-r6jv.onrender.com/user/add", formData);
         alert("User Added Successfully");
       }
 
@@ -40,7 +40,7 @@ const User = () => {
 
   const getData = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/user/get");
+      const response = await axios.get("https://curd-mern-r6jv.onrender.com/user/get");
       setData(response.data.users);
     } catch (err) {
       console.error(err);
@@ -49,7 +49,7 @@ const User = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/user/delete/${id}`);
+      await axios.delete(`https://curd-mern-r6jv.onrender.com/user/delete/${id}`);
       alert("User Deleted Successfully");
       getData();
     } catch (err) {
